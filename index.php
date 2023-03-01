@@ -13,7 +13,7 @@
 <body>
   <div class="content mt-4">
     <h1>Botwa Farm</h1>
-    <table class="table">
+    <table class="table" id="editable_table">
       <thead class="thead-dark">
         <tr>
           <th scope="col">#</th>
