@@ -1,3 +1,6 @@
+<?php
+require_once('db.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -24,6 +27,21 @@
         </tr>
       </thead>
       <tbody>
+        <?php
+        if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+        ?>
+            <tr>
+              <th scope="row" contenteditable="true"><?php echo $row['customerNumber']; ?></th>
+              <td contenteditable="true" onfocus="changeBackground(this);" onblur="saveData(this, '<?php echo $row["customerNumber"]; ?>', 'customerName');"><?php echo $row['customerName']; ?></td>
+              <td contenteditable="true" onfocus="changeBackground(this);" onblur="saveData(this, '<?php echo $row["customerNumber"]; ?>', 'phone');"><?php echo $row['phone']; ?></td>
+              <td contenteditable="true" onfocus="changeBackground(this);" onblur="saveData(this, '<?php echo $row["customerNumber"]; ?>', 'addressLine1');"><?php echo $row['addressLine1']; ?></td>
+              <td contenteditable="true" onfocus="changeBackground(this);" onblur="saveData(this, '<?php echo $row["customerNumber"]; ?>', 'creditLimit');"><?php echo $row['creditLimit']; ?></td>
+            </tr>
+        <?php
+          }
+        }
+        ?>
       </tbody>
     </table>
   </div>
