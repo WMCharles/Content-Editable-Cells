@@ -21,6 +21,7 @@ $result = $conn->query($sql);
 
 <body>
     <div class="content mt-4">
+        <h2 class="font-weight-bold mb-4">Inline Editing - PHP | AJAX | MySQLi </h2>
         <table class="table table-bordered" id="editable_table">
             <thead>
                 <tr>
