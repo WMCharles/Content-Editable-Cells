@@ -4,8 +4,13 @@
     $value = $conn->real_escape_string($_POST["value"]);
     $customerNumber = $conn->real_escape_string($_POST["customerNumber"]);
     $sql = "UPDATE customers SET $column='$value' WHERE customerNumber=$customerNumber";
-    if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+    $stmt = $conn->prepare("UPDATE customers SET $column=? WHERE customerNumber=?");
+    $stmt->bind_param("si", $value, $customerNumber);
+
+    if ($stmt->execute()) {
+        echo json_encode(true);
     } else {
-        echo "Error updating record: " . $conn->error;
+        echo json_encode(false);
     }
+    $stmt->close();
+    $conn->close();
