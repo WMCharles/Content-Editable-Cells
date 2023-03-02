@@ -1,6 +1,6 @@
 function changeBackground(obj) {
     $(obj).removeClass("bg-success");
-    $(obj).addClass("bg-danger");
+    $(obj).addClass("bg-warning");
 }
 
 function saveData(obj, customerNumber, column) {
@@ -16,7 +16,7 @@ function saveData(obj, customerNumber, column) {
         dataType: 'json',
         success: function (data) {
             if (data) {
-                $(obj).removeClass("bg-danger");
+                $(obj).removeClass("bg-warning");
                 $(obj).addClass("bg-success");
             }
         }
