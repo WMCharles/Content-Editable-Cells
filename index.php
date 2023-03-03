@@ -16,7 +16,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>DataTables</title>
+    <title>DataTables | Inline-Editing </title>
 </head>
 
 <body>
